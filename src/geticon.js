@@ -3,16 +3,18 @@ import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
 import ThunderstormOutlinedIcon from '@mui/icons-material/ThunderstormOutlined';
 
 export default function Geticon({ weather }) {
+    console.log(weather);
     if (!weather || !weather.weather || weather.weather.length === 0) {
         return <LightModeOutlinedIcon sx={{ fontSize: 130 }} />;
     }
     
-    switch(weather.weather[0].description) {
-        case 'broken clouds' || 'few clouds'||'scattered clouds'||'overcast clouds'||'mist'||'smoke'||'fog'||'haze'||'sand/ dust whirls'||'dust'||'volcanic ash'||'squalls'||'tornado':
+    switch(weather.weather[0].main) {
+        
+        case ('Clouds' || 'Fog' || 'Dust'|| 'Haze' ||'Smoke'||'Mist'):
             return <CloudOutlinedIcon sx={{ fontSize: 130 }} />;
-        case 'clear sky':
+        case ('clear sky'||'Clear'):
             return <LightModeOutlinedIcon sx={{ fontSize: 130 }} />;
-        case 'Rain'||'Drizzle'||'Thunderstorm'||'Snow'||'Freezing rain'||'Shower rain':
+        case ('Rain'||'Drizzle'||'Thunderstorm'||'Snow'||'Freezing rain'||'Tornado'):
             return <ThunderstormOutlinedIcon sx={{ fontSize: 130 }} />;
         default:
             return <LightModeOutlinedIcon sx={{ fontSize: 130 }} />; // Return null for unknown weather conditions

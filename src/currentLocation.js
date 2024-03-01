@@ -13,6 +13,7 @@ const CurrentLocation = () => {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState(null);
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
+    const [permissionGranted, setPermissionGranted] = useState(false);
 
     const handleChange = (e) => {
         setCity(e.target.value);
@@ -43,7 +44,7 @@ const CurrentLocation = () => {
                 navigator.geolocation.getCurrentPosition((position) => {
                     setLatitude(position.coords.latitude);
                     setLongitude(position.coords.longitude);
-                 
+                    setPermissionGranted(true);
                     getWeather(position.coords.latitude, position.coords.longitude);
                 }, (error) => {
                     console.error('Error getting location:', error);
@@ -86,7 +87,10 @@ const CurrentLocation = () => {
     const time = currentDateTime.toLocaleTimeString();
 
     return (
+        
         <div className="overlay">
+            {permissionGranted ? (
+                    <>
             <div className="overlay-content">
                 <div className="overlay-left" >
                     <h2 className='state'>{weather ? weather.name : 'Loading...'}<br></br>{weather ? weather.sys.country : 'Loading...'}</h2>
@@ -132,6 +136,18 @@ const CurrentLocation = () => {
                     </div>
                 </div>
             </div>
+            </>):(
+                <div className='perms'>
+                    <img src='./WeatherIcons.gif' alt="location"  />
+                    <br/>
+                    <br/>
+                    <div className="loader">
+                        <p className='detect'>Detecting your location</p>
+                        <p>Your current location wil be displayed on the App & used for calculating Real time weather.</p>
+                    </div>
+                    
+                </div>
+                )}
         </div>
     );
 }

@@ -141,3 +141,15 @@
 }
   
   
+.loader{
+    color: white;
+    text-align: center;
+}
+.detect{
+    font-size: 25px;
+    font-family: "Dosis", sans-serif;
+}
+
+.perms{
+    text-align: center;
+}
