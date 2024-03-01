@@ -5,6 +5,7 @@ import axios from 'axios';
 import apiKeys from "./apiKeys";
 import Geticon from './geticon.js';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import loader from "./static/WI.gif";
 
 const CurrentLocation = () => {
 
@@ -136,19 +137,18 @@ const CurrentLocation = () => {
                     </div>
                 </div>
             </div>
-            </>):(
-                <div className='perms'>
-                    <img src='./WeatherIcons.gif' alt="location"  />
-                    <br/>
-                    <br/>
-                    <div className="loader">
-                        <p className='detect'>Detecting your location</p>
-                        <p>Your current location wil be displayed on the App & used for calculating Real time weather.</p>
-                    </div>
-                    
+            </>):(<>
+                <div className='loader'>
+                    <img src={loader} style={{ width: "50%" }} alt='loading'/>
+                    <p className='detect'>Detecting your location</p>
+                    <p>Your current location wil be displayed on the App & used for calculating Real time weather.</p>
                 </div>
+                </>
                 )}
+                
         </div>
+        
+        
     );
 }
 
