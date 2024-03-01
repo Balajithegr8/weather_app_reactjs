@@ -25,6 +25,11 @@ const CurrentLocation = () => {
 
         try {
             const response = await fetch(apiUrl);
+            if (!response.ok) {
+                alert('City not found');
+                throw new Error('City not found');
+                
+            }
             const data = await response.json();
             setWeather(data);
         } catch (error) {
@@ -54,14 +59,11 @@ const CurrentLocation = () => {
  
     const getWeather = async (lat, lng) => {
         try {
-            console.log(lat, lng);
             const response = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKeys.openWeatherMap}&units=metric`
             );
             
-
             if (response.data) {
-                console.log('Weather:', response.data);
                 setWeather(response.data);
             }
         } catch (error) {
