@@ -19,7 +19,8 @@ This is a weather app built with React.js that allows users to search for weathe
 
 ## Deployment
 
-The app is deployed on ([Render](https://render.com/)) and uses the [OpenWeather API](https://openweathermap.org/api) to fetch weather data.
+The app is deployed on [Render](https://render.com/) and uses the [OpenWeather API](https://openweathermap.org/api) to fetch weather data.
+[Click here!](https://weather-app-reactjs-nvep.onrender.com/)
 
 ## Usage
 
