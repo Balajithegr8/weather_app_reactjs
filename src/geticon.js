@@ -3,7 +3,6 @@ import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
 import ThunderstormOutlinedIcon from '@mui/icons-material/ThunderstormOutlined';
 
 export default function Geticon({ weather }) {
-    console.log(weather);
     if (!weather || !weather.weather || weather.weather.length === 0) {
         return <LightModeOutlinedIcon sx={{ fontSize: 130 }} />;
     }

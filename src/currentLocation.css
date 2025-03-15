@@ -152,3 +152,29 @@
 }
 
 
+/* Add this media query to your existing CSS */
+@media (max-width: 768px) {
+    .overlay{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .overlay-content {
+        flex-direction: column;
+    }
+    
+    .overlay-left{
+        width: 100%;
+        height: auto;
+        min-height: 30%;
+    }
+
+    .overlay-right {
+        width: 100%;
+        height: auto;
+        min-height: 50%;
+    }
+}
+
+
