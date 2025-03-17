@@ -27,10 +27,6 @@ function App() {
   return (
     <div style={styles.background}>
       <CurrentLocation />
-      <div style={styles.footer}>
-        
-        <p className='footer'><b><a href="https://github.com/Balajithegr8" style={{ color: 'white' }}>Download Source Code</a></b> | Developed by <b><a href="https://www.linkedin.com/in/balaji-prakasam-7a77b822b/" style={{ color: 'white'  }}>Balaji</a></b> | Powered by HTML REACT</p>
-      </div>
     </div>
   );
 }

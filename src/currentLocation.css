@@ -163,6 +163,10 @@
     .overlay-content {
         flex-direction: column;
     }
+
+    .yooo{
+        padding-left: 67.8%;
+    }
     
     .overlay-left{
         width: 100%;
